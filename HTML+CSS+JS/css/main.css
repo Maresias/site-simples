@@ -50,6 +50,20 @@
     .jl-menu{
         display: none;
     }
+
+    .jl-btn-contact {
+        width: 45px;
+        height: 45px;
+        display: block;
+        background-color: var(--cor02);
+        background-image: url(../images/icon-contact-close.svg);
+        background-repeat: no-repeat;
+        position: fixed;
+        bottom: 45px;
+        right: 45px;
+        border-radius: 50%;
+        z-index: 200;
+    }
 }
 
 @media screen and (min-width: 576px)  {
@@ -90,13 +104,19 @@
 
     .jl-menu a:before{
         content: '';
-        width: 100%;
+        width: 0%;
         height: 4px;
         background-color: var(--cor02);
         display: block;
         position: absolute;
-        bottom: 0;
+        bottom: -6px;
         left: 0;
+        transition: all 0.2s ease-out;
+
+    }
+
+    .jl-menu a:hover:before{
+        width: 100%;
     }
 }
 
@@ -111,3 +131,35 @@
 @media screen and (min-width: 1600px){
     
 }
+
+
+/* CLASSES ULTILITARIAS */
+
+.jl-text-green{
+    color: #2ccb69;
+}
+
+.jl-text-dark {
+    color: #4d4c4c;
+}
+
+.jl-text-black {
+    color: #000;
+}
+
+.jl-bg-green {
+    background-color: #2ccb69;
+}
+
+.jl-bg-dark {
+    background-color: #000;
+}
+
+.jl-bg-light {
+    background-color: #bcbcbc;
+}
+
+.jl-bg-black {
+    background-color: #000;
+}
+

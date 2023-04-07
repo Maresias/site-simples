@@ -4,13 +4,20 @@
     box-sizing: border-box;
 }
 
+:root{
+    --cor01: #1c1c1c;
+    --cor02: #2ccb69;
+    --cor03: #bcbcbc;
+}
+
+
 @media screen and (min-width: 320px){
     
     .jl-page-wrapper{
         width: 100%;
         height: 100vh;
         display: block;
-        background-color: #1c1c1c;
+        background-color: var(--cor01);
         border: 30px solid #000;
     }
 
@@ -29,7 +36,7 @@
         height: 110px;
         float: left;
         margin-left: 60px;
-        background-color: #2ccb69;
+        background-color: var(--cor02);
         border-radius: 0 0 37px 0;
     }
 
@@ -64,17 +71,32 @@
     .jl-menu a{
         font-family: 'Open Sans';
         font-size: 16px;
-        color: #bcbcbc;
+        color: var(--cor03);
         text-decoration: none;
         text-transform: lowercase;
         display: inline-block;
-        padding: 0 20px;
-        margin-top: 50px;
-
+        margin: 50px 20px 0 20px;
+        font-weight: 400;
+        position: relative;
     }
 
     .jl-menu a:first-child{
-        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .jl-menu a:hover{
+        color: var(--cor02);
+    }
+
+    .jl-menu a:before{
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color: var(--cor02);
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 }
 

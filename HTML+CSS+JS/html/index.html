@@ -7,21 +7,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <title>lemon</title>
 </head>
 <body>
+    <div class="jl-preloader">
+        <div class="jl-preloader-inner">
+            <img src="../images/lemon-loader.svg" alt="lemon-loader" class="jl-mar-bottom-15">
+            <p class="jl-text-light jl-mar-top-15" >Aguarde um pouquinho.. 
+                estou preparando a limonada
+            </p> 
+        </div>
+      
+
+    </div>
+
     <header class="jl-topbar" >
         <div class="jl-logo" >
             <img src="../images/logo.svg" alt="logo joão lemon">
         <div class="jl-contact-info-inner" >
             </div>
             <div class="jl-contact-info jl-bg-black jl-text-light" >
+
                 <h2 class="jl-title jl-text-green">Contato</h2>
+
                 <p>hello@joaolemon.com</p>
+
                 <p>+55 (00) 9999 8888</p>
+
                 <div class="jl-social-links" >
+
                     <a href="#" class="jl-social" >
+
                         <img src="../images/icon-instagram.svg" alt="Instagram">
                     </a>
                     <a href="#" class="jl-social" >
@@ -37,9 +55,9 @@
             
         </div>
 
-        <div class="jl-btn-contact" >
+        <button class="jl-btn-contact" >
 
-        </div>
+        </button>
         <nav class="jl-menu">
             <a href="#">Home</a>
             <a href="#">Projetos</a>
@@ -48,7 +66,39 @@
     </header>
     <div class="jl-page-wrapper">
 
+        <section class="jl-full-height jl-first-section" id="jl-home-presetetion">
+
+            <div class="container-fluid" >
+
+                <div class="row " >
+
+                    <div class="col-sm-12 col-md-3 offset-md-2 jl-display-text" >
+
+                        <h1 class="jl-title jl-text-green jl-title-big" >Olá!</h1>
+
+                        <p class="jl-text-light">Meu nome é <span class="jl-text-green" >joão lemon </span >Lorem ipsum dolor sit amet consectetur 
+                            adipisicing elit. Ea reprehenderit animi aliquid quam 
+                            perspiciatis placeat nihil doloremque tempora non iste esse, fugiat minima modi 
+                            aliquam. Incidunt, deleniti atque. Sint, dolores.</p>
+
+                            <button class="jl-btn jl-btn-medium jl-btn-green">Meu Botão</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="jl-scroll-down" >
+
+                <div class="jl-arrow-down" >
+                    <img src="../images/arrow-down.svg" alt="Role a Página">
+                </div>
+            </div>
+        </section>
+
+        <section class="jl-full-height" >
+            SECTION 2
+        </section>
+
     </div>
-    
+    <script src="../js/main.js"></script>
 </body>
 </html>

@@ -16,15 +16,84 @@ p{
     --cor03: #bcbcbc;
 }
 
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes lineDown{
+    0%{
+        transform: scale(1, 0);
+        transform-origin: top center;
+    }
+
+    25%{
+        transform: scale(1, 1);
+        transform-origin: top center;
+    }
+
+    75%{
+        transform: scale(1, 1);
+        transform-origin: top center;
+    }
+
+    76%{
+        transform: scale(1 , 1);
+        transform-origin: bottom center;
+    }
+
+    100%{
+        transform: scale(1, 0);
+        transform-origin: bottom center;
+    }
+}
+
+@keyframes arrowDown{
+    0%{
+        bottom: 25px;
+    }
+
+    30%{
+        bottom: 15px;
+        opacity: 1;
+    }
+
+    70%{
+        bottom: 10px;
+        opacity: 1;
+    }
+
+    100%{
+        bottom: 5px;
+        opacity: 0;
+    }
+}
 
 @media screen and (min-width: 320px){
     
-    .jl-page-wrapper{
+    .jl-page-wrapper, .jl-preloader{
         width: 100%;
         height: 100vh;
-        display: block;
+        display: table;
         background-color: var(--cor01);
         border: 30px solid #000;
+    }
+
+    .jl-preloader{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .jl-preloader-inner{
+        margin-top: -45px;
     }
 
     .jl-topbar{
@@ -69,6 +138,10 @@ p{
         right: 45px;
         border-radius: 50%;
         z-index: 200;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+
     }
     .jl-contact-info{
         width: 245px;
@@ -78,6 +151,7 @@ p{
         bottom: 115px;
         right: 65px;
         z-index: 200;
+        display: none;
     }
 
     .jl-contact-info-inner{
@@ -132,6 +206,68 @@ p{
         background: transparent url('../images/corner.svg') no-repeat;
 
     }
+
+    /*-----HOME-----*/
+    .jl-display-text{
+        margin-top: 10%;
+    }
+
+    #jl-home-presetetion{
+        background-image: url(../images/joao-lemon-designer-home.png);
+        background-repeat: no-repeat;
+        background-position: 50% bottom;
+    }
+
+    .jl-scroll-down{
+        width: 70px;
+        height: 105px;
+        border-radius: 35px 35px 0 0;
+        background-color: var(--cor02);
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 100;
+    }
+
+    .jl-arrow-down{
+        width: 100%;
+        height: 75px;
+        display: table;
+        margin-top: 30px;
+        position: relative;
+    }
+
+    .jl-arrow-down img{
+        width: 16px;
+        height: 10px;
+        display: block;
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        opacity: 0;
+        animation: arrowDown 1.5s linear 1.5s infinite;
+    }
+
+    .jl-arrow-down:before{
+        content: '';
+        width: 2px;
+        height: 45px;
+        display: block;
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-color: #000;
+        animation: lineDown 2s ease-out infinite;
+        transform-origin: top center;
+    }
+    
 
 }
 
@@ -201,6 +337,51 @@ p{
     
 }
 
+/* BOTÕES */ 
+
+.jl-btn{
+    display: table;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    border: none;
+    transition: all 0.2s ease-out;
+}
+
+.jl-btn-medium{
+    height: 38px;
+    padding: 0 27px;
+    border-radius: 14px;
+    font-size: 11px;
+}
+
+.jl-btn-large{
+    height: 45px;
+    padding: 0 35px;
+    border-radius: 23px;
+    font-size: 16px;
+}
+
+.jl-btn-green{
+    background-color: var(--cor02);
+    color: var(--cor01);
+}
+
+.jl-btn-green:hover{
+    background-color: rgb(6, 135, 55);
+    color: #fff;
+
+}
+
+.jl-btn-dark{
+    background-color: var(--cor01);
+    color: var(--cor02);
+}
+
+.jl-btn-dark{
+    background-color: #151515;
+    color: #fff;
+}
 
 /* CLASSES ULTILITARIAS */
 
@@ -225,6 +406,13 @@ p{
     color: #000;
 }
 
+.jl-title-big{
+    font-size: 120px;
+}
+
+
+/* CLASSES DE BG */
+
 .jl-bg-green {
     background-color: #2ccb69;
 }
@@ -241,3 +429,61 @@ p{
     background-color: #000;
 }
 
+
+
+.jl-mar-top-15{
+    margin-top: 15px;
+}
+
+.jl-mar-right-15{
+    margin-right: 15px;
+}
+
+.jl-mar-bottom-15{
+    margin-bottom: 15px;
+}
+
+.jl-mar-left-15{
+    margin-left: 15px;
+}
+
+.jl-pad-15{
+    padding-top: 15px;
+}
+
+.jl-pad-15{
+    padding-right: 15px;
+}
+
+.jl-pad-15{
+    padding-bottom: 15px;
+}
+
+.jl-pad-15{
+    padding-left: 15px;
+}
+
+.jl-full-height{
+    height: 100vh;
+}
+
+.jl-first-section{
+    height: calc(100vh - 30px);
+
+}
+
+
+/* CLASSES DE COMPORTAMENTO */
+ 
+.jl-is-open{
+
+    display:block
+}
+
+.jl-change-icon{
+    background-position-y: -45px;
+}
+
+.jl-fade-out{
+    animation: fadeOut 2s forwards ease-out;
+}

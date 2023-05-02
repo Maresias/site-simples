@@ -4,7 +4,7 @@
 var sliderContainer = document.querySelector('.jl-slider-container');
 var sliderList = document.querySelector('.jl-slider-list');
 var sliderItem = document.querySelectorAll('.jl-slider-item');
-const sliderTotalItems = sliderItem.length
+const sliderTotalItems = sliderItem.length;
 var sliderListWidth = null;
 var prevItem = document.querySelector('.jl-item-prev');
 var nextItem = document.querySelector('.jl-item-next');
@@ -34,6 +34,7 @@ sliderList.style.width = sliderListWidth + 'px';
 
 //Fazendo Animaçao do Slider onClick
 
+
 //HANDLERS
 
 //Next Slide Animaçao
@@ -47,7 +48,8 @@ var nextSlideAnim = function () {
     sliderPos -= containerWidth;
     anime({
         targets: sliderList,
-        translateX: sliderPos
+        translateX: sliderPos,
+        easing: 'cubicBezier(0,1.01,.32,1)'
     });
 }
 
@@ -60,71 +62,93 @@ var prevSlideAnim = function () {
     sliderPos += containerWidth;
     anime({
         targets: sliderList,
-        translateX: sliderPos
+        translateX: sliderPos,
+        easing: 'cubicBezier(0,1.01,.32,1)'
     });
 }
 
-//COUMTER FORMATER
-
-var counterFormatter = function(n){
-    if(n < 10){
+//Counter Formater
+var counterFormatter = function (n) {
+    if (n < 10) {
         return '0' + n;
-    }else{
+    } else {
         return n;
     }
 }
 
-// COUNTER ADD
-
-var counterAdd = function(){
-   if ((currentCounter >=0) && (currentCounter < sliderTotalItems)){
-       currentCounter ++;
-       currentSlide.innerHTML = counterFormatter(currentCounter);
-       navCounter.innerHTML = counterFormatter(currentCounter);
-   }  
+//Counter Add
+var counterAdd = function () {
+    if ((currentCounter >= 0) && (currentCounter < sliderTotalItems)) {
+        currentCounter++;
+        currentSlide.innerHTML = counterFormatter(currentCounter);
+        navCounter.innerHTML = counterFormatter(currentCounter);
+    }
 }
 
-//COUNTER REMOVE
- var counterRemove = function(){
-     if ((currentCounter > 1) && (currentCounter <= sliderTotalItems)){
-         currentCounter --;
-         currentSlide.innerHTML = counterFormatter(currentCounter);
-         navCounter.innerHTML = counterFormatter(currentCounter);
-     }
- }
+//Counter Remove
+var counterRemove = function () {
+    if ((currentCounter > 1) && (currentCounter <= sliderTotalItems)) {
+        currentCounter--;
+        currentSlide.innerHTML = counterFormatter(currentCounter);
+        navCounter.innerHTML = counterFormatter(currentCounter);
+    }
+}
 
- //SET ACTIVE NAV
-
- var setActiveNav = function(){
-
-    for (var nv = 0; nv < navItems.length; nv ++){
+//Set Active Nav
+var setActiveNav = function () {
+    for (var nv = 0; nv < navItems.length; nv++) {
         let myNavNum = parseInt(navItems[nv].getAttribute('data-nav'));
-        if (myNavNum === currentCounter){
+
+        if (myNavNum === currentCounter) {
             navItems[nv].classList.add('jl-item-active');
+
             anime({
                 targets: '.jl-item-active',
-                width:90
+                width: 90
             });
         }
     }
+}
 
-    setActiveNav();
- }
+//Set Active Slide
+var setActiveSlide = function () {
+    for (var sld = 0; sld < sliderItem.length; sld++) {
+        let mySlideNum = parseInt(sliderItem[sld].getAttribute('data-slide'));
 
- var changeActive = function(){
-     for (var rm = 0; rm < navItems.length; rm ++){
-         navItems[rm].classList.remove('jl-item-active');
-         anime({
+        if (mySlideNum === currentCounter) {
+            sliderItem[sld].classList.add('jl-slide-active');
+            sliderItem[sld].querySelector('.jl-portfolio-item-box').classList.add('jl-scale-right');
+        }
+    }
+}
+
+var changeActive = function () {
+    for (var rm = 0; rm < navItems.length; rm++) {
+        navItems[rm].classList.remove('jl-item-active');
+        anime({
             targets: navItems[rm],
-            width:20
+            width: 20
         });
-     }
-     setActiveNav();
- }
+    }
+
+    for (var rms = 0; rms < sliderItem.length; rms++) {
+        sliderItem[rms].classList.remove('jl-slide-active');
+    }
+    setActiveNav();
+    setActiveSlide();
+
+}
+
+
 
 //ACTIONS
-
 totalSlide.innerHTML = counterFormatter(sliderTotalItems);
+
+anime({
+    targets: '.jl-item-active',
+    width: 90
+});
+
 
 nextItem.addEventListener('click', function () {
     nextSlideAnim();

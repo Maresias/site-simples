@@ -39,7 +39,7 @@
     <div class="jl-contact-info jl-bg-black jl-text-light">
         <div class="jl-contact-info-inner">
             <h2 class="jl-title jl-text-green">Contato</h2>
-            <p>hello@joaolemon.com</p>
+            <p>hello@<span>joaolemon</span>.com</p>
             <p>+55 (00) 9 9999 8888</p>
             <div class="jl-social-links">
                 <a href="#" class="jl-social">
@@ -64,8 +64,10 @@
         <section class="jl-section-offset-top" >
             <div class="container-fluid" >
                 <div class="row" >
-                    <div class="col-sm-4" >
-                        <img src="../images/joao-lemon-designer-sobre.png" alt="João Lemon" title="João Lemon">
+                    <div class="col-sm-4" id="jl-avatar-sobre">
+                        <div class="jl-box-img" >
+                            <img src="../images/joao-lemon-designer-sobre.png" alt="João Lemon" title="João Lemon" class="jl-img-responsive" >
+                        </div>
                     </div>
                     <div class="col-sm-5" >
                         <div class="row" >
@@ -78,11 +80,26 @@
                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro illum sequi totam
                                      nemo accusantium sit fuga numquam voluptatibus esse magnam repudiandae, corporis
                                       minima ducimus nisi officia iure maxime dicta atque?</p>
-
+                                        <div class="jl-contact-info-inner jl-mar-top-15">
+                                             <div class="jl-social-links-circle jl-mar-bottom-15">
+                                                <a href="#" class="jl-social jl-bg-green jl-text-black jl-mar-right-30">
+                                                    <ion-icon name="logo-instagram" size="large" ></ion-icon>
+                                                </a>
+                                                <a href="#" class="jl-social jl-bg-green jl-text-black jl-mar-right-30">
+                                                    <ion-icon name="logo-twitter" size="large"></ion-icon>
+                                                </a>
+                                                <a href="#" class="jl-social jl-bg-green jl-text-black jl-mar-right-30">
+                                                    <ion-icon name="logo-dribbble" size="large"></ion-icon>
+                                                </a>
+                                                </div>
+                                                <p>hello@<span class="jl-text-green" >joaolemon</span>.com</p>
+                                                <br>
+                                                <p>+55 (00) 9 9999 8888</p>
+                                    </div>
                             </div>
                             <div class="col-sm-5" >
                                 <h4 class="jl-subtitle jl-text-green jl-mar-bottom-15" >Prêmios e Reconhecimentos</h4>
-                                <ul class="jl-text-light">
+                                <ul class="jl-text-light jl-page-list">
                                     <li>Awwards Site of the day</li>
                                     <li>CSS Mania</li>
                                     <li>FWA Site of the day</li>

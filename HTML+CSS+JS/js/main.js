@@ -1,6 +1,6 @@
 //Declarando variaveis 
-var btnContact = document.querySelector('.jl-btn-contact')
-var toggleModal = document.querySelectorAll('.jl-toggle-modal')
+var btnContact = document.querySelector('.jl-btn-contact');
+var toggleModal = document.querySelectorAll('.jl-toggle-modal');
 
 //Page Preloader
 window.addEventListener('load', function(){
@@ -39,7 +39,11 @@ for(var i = 0; i < toggleModal.length; i++ ){
 
 //ANIMANDO ELEMENTOS ON SCROLL COM EAYPIONTS//
 
-var myScrollDown = document.querySelector('.jl-scroll-down')
+var postGallery = document.querySelector('.jl-post-gallery');
+var postGalleryHeight = postGallery.clientHeight;
+postGallery.style.height = (postGalleryHeight - 270) + 'px';
+
+var myScrollDown = document.querySelector('.jl-scroll-down');
 var waypoint = new Waypoint(
     {
     element: myScrollDown,

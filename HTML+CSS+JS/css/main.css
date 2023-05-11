@@ -658,15 +658,32 @@ p, label{
         display: table;
         border-right: 1px solid var(--cor02);
     }
+    .jl-post{
+        width: 100%;
+        display: table;
+    }
 
     .jl-post P{
         margin-bottom: 30px;
+
     }
 
     .jl-post-section{
         width: 100%;
         display: table;
         padding: 45px 0;
+    }
+
+    .jl-pre-gallery{
+        padding-bottom: 350px;
+    }
+    .jl-post-gallery{
+        display: block;
+    }
+
+    .jl-post-gallery .container{
+        position: relative;
+        top: -270px;
     }
 }
 

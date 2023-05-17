@@ -5,6 +5,23 @@ var galleryImagens = document.querySelectorAll('.jl-thumb-img');
 var closeGallery = document.querySelectorAll('.jl-toggle-gallery');
 var btnNext = document.querySelector('.jl-item-next');
 var btnPrev = document.querySelector('.jl-item-prev');
+var currCounter = document.querySelector('.jl-current-slide');
+var totalCounter = document.querySelector('.jl-total-slide');
+
+
+
+//COUNTER FORMATER
+
+var counterFormatter = function(n){
+    if (n < 10){
+        return '0' + n;
+    }else{
+        return n;
+    }
+}
+
+
+totalCounter.innerHTML = galleryImagens.length;
 
 const getImagesSrc = function (){
     for (var i = 0; i < galleryImagens.length; i ++){
@@ -17,6 +34,8 @@ const getImagesSrc = function (){
 
             overlay.classList.add('jl-is-open');
             frameContainer.classList.add('jl-is-open');
+
+            currCounter.innerHTML = counterFormatter(itemNum);
         })
         
 
@@ -53,6 +72,8 @@ const nexItem = function(){
             // PASSAMOS O DATA-SR PARA A TAG DE IMG NO FRAME
             frameImage.setAttribute('src', nextSrc);
             frameImage.setAttribute('data-index', nextIndex);
+
+            currCounter.innerHTML = counterFormatter(nextIndex);
         }
     }
 }
@@ -80,6 +101,8 @@ const prevItem = function(){
             // PASSAMOS O DATA-SRC E DATA-INDEX A TAG IMG
             frameImage.setAttribute('src', prevSrc);
             frameImage.setAttribute('data-index', prevIndex);
+
+            currCounter.innerHTML = counterFormatter(prevIndex) ;
         }
 
     }

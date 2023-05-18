@@ -713,7 +713,7 @@ p, label{
     .jl-gallery-frame-inner .jl-skeleton-loading{
         width: 86%;
         height: 100%;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;

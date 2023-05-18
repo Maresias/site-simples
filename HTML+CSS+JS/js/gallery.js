@@ -7,6 +7,7 @@ var btnNext = document.querySelector('.jl-item-next');
 var btnPrev = document.querySelector('.jl-item-prev');
 var currCounter = document.querySelector('.jl-current-slide');
 var totalCounter = document.querySelector('.jl-total-slide');
+var skeletonLoading = document.querySelector('.jl-skeleton-loading');
 
 
 
@@ -23,11 +24,33 @@ var counterFormatter = function(n){
 
 totalCounter.innerHTML = galleryImagens.length;
 
+//SKELETON LOADING//
+
+const skeletonAnim = function (imagem) {
+    var myImage = new Image();
+    myImage.src = imagem;
+    myImage.addEventListener('load', function(){
+        skeletonLoading.classList.add('jl-fade-out');
+        console.log('iniciou fade out')
+        setTimeout(function(){
+            skeletonLoading.style.display = 'none'
+            console.log('iniciou display none')
+        }, 5000)
+    })
+}
+
+
+
+//OPEN GALLERY MODAL
 const getImagesSrc = function (){
     for (var i = 0; i < galleryImagens.length; i ++){
         galleryImagens[i].addEventListener('click', function (){
             var imageSrc = this.getAttribute('data-src');
             var itemNum = this.getAttribute('data-item');
+
+            //SKELETON//
+
+            skeletonLoading.style.display = 'flex';
 
             frameImage.setAttribute('src', imageSrc);
             frameImage.setAttribute('data-index', itemNum);
@@ -36,6 +59,8 @@ const getImagesSrc = function (){
             frameContainer.classList.add('jl-is-open');
 
             currCounter.innerHTML = counterFormatter(itemNum);
+
+            skeletonAnim(imageSrc);
         })
         
 
@@ -69,11 +94,14 @@ const nexItem = function(){
             var nextSrc = item.getAttribute('data-src');
             var nextIndex = item.getAttribute('data-item');
 
+            skeletonLoading.style.display = 'flex'
             // PASSAMOS O DATA-SR PARA A TAG DE IMG NO FRAME
             frameImage.setAttribute('src', nextSrc);
             frameImage.setAttribute('data-index', nextIndex);
 
             currCounter.innerHTML = counterFormatter(nextIndex);
+
+            skeletonAnim(nextSrc);
         }
     }
 }
@@ -97,12 +125,15 @@ const prevItem = function(){
         if (itemNum === prevItemNum){
             var prevSrc = item.getAttribute('data-src');
             var prevIndex = item.getAttribute('data-item');
-    
+
+            skeletonLoading.style.display = 'flex'
             // PASSAMOS O DATA-SRC E DATA-INDEX A TAG IMG
             frameImage.setAttribute('src', prevSrc);
             frameImage.setAttribute('data-index', prevIndex);
 
             currCounter.innerHTML = counterFormatter(prevIndex) ;
+
+            skeletonAnim(prevSrc);
         }
 
     }

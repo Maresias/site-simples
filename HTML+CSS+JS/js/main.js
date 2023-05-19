@@ -1,6 +1,8 @@
 //Declarando variaveis 
 var btnContact = document.querySelector('.jl-btn-contact');
 var toggleModal = document.querySelectorAll('.jl-toggle-modal');
+var toggleMenu = document.querySelectorAll('.jl-toggle-menu');
+var menuMobile = document.querySelector('.jl-menu-mob');
 
 //Page Preloader
 window.addEventListener('load', function(){
@@ -14,8 +16,6 @@ window.addEventListener('load', function(){
     
 })
 
-
-
 //Abrindo e fechando informações de contato
 btnContact.addEventListener('click', function(){
     var boxContact = document.querySelector('.jl-contact-info');
@@ -23,13 +23,22 @@ btnContact.addEventListener('click', function(){
     this.classList.toggle('jl-change-icon');
 });
 
+//ABRINDO E FECHANDO O MENU MOBILE//
+
+for(var m = 0; m < toggleMenu.length; m++ ){
+    toggleMenu[m].addEventListener('click', function(){
+        var overlay = document.querySelector('.jl-menu-overlay');
+        overlay.classList.toggle('jl-is-open')
+        menuMobile.classList.toggle('jl-menu-is-closed');
+        menuMobile.classList.toggle('jl-menu-is-open');
+    });
+}
 //Abrindo e fechando o Modal de orçamento//
 
 for(var i = 0; i < toggleModal.length; i++ ){
     toggleModal[i].addEventListener('click', function(){
-        var overlay = document.querySelector('.jl-overlay');
         var modalOcamento = document.querySelector('#jl-modal-orcamento');
-
+        var overlay = document.querySelector('.jl-overlay');
         overlay.classList.toggle('jl-is-open');
         modalOcamento.classList.toggle('jl-is-open');
         modalOcamento.classList.toggle('jl-slide-top-in')

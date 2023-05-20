@@ -255,6 +255,7 @@ p, label{
         top: 0;
         padding: 100px 30px 30px 30px;
         z-index: 1300;
+        transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
     }
 
     .jl-menu-is-open{
@@ -850,9 +851,8 @@ p, label{
 
 @media screen and (min-width: 992px){
 
-    .jl-menu-mob{
+    .jl-menu-mob, .jl-btn-menu-mob{
         display: none;
-        background-color: turquoise;
     }
 
     

@@ -3,6 +3,7 @@ var btnContact = document.querySelector('.jl-btn-contact');
 var toggleModal = document.querySelectorAll('.jl-toggle-modal');
 var toggleMenu = document.querySelectorAll('.jl-toggle-menu');
 var menuMobile = document.querySelector('.jl-menu-mob');
+var btnMenuMobIcon = document.querySelector('.jl-btn-menu-mob ion-icon');
 
 //Page Preloader
 window.addEventListener('load', function(){
@@ -31,6 +32,16 @@ for(var m = 0; m < toggleMenu.length; m++ ){
         overlay.classList.toggle('jl-is-open')
         menuMobile.classList.toggle('jl-menu-is-closed');
         menuMobile.classList.toggle('jl-menu-is-open');
+
+        var icons = btnMenuMobIcon.getAttribute('name');
+
+
+        if (icons === "menu"){
+            btnMenuMobIcon.setAttribute('name', 'close');
+            
+        }else{
+            btnMenuMobIcon.setAttribute('name', 'menu');
+        }
     });
 }
 //Abrindo e fechando o Modal de orçamento//
@@ -41,9 +52,11 @@ for(var i = 0; i < toggleModal.length; i++ ){
         var overlay = document.querySelector('.jl-overlay');
         overlay.classList.toggle('jl-is-open');
         modalOcamento.classList.toggle('jl-is-open');
-        modalOcamento.classList.toggle('jl-slide-top-in')
+        modalOcamento.classList.toggle('jl-slide-top-in');
+
     });
 }
+
 
 
 //ANIMANDO ELEMENTOS ON SCROLL COM EAYPIONTS//

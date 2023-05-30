@@ -386,10 +386,25 @@ p, label{
         margin-top: 10%;
     }
 
-    #jl-home-presetetion{
+    .jl-home-presetetion{
         background-image: url(../images/joao-lemon-designer-home.png);
         background-repeat: no-repeat;
         background-position: 50% bottom;
+        position: relative;
+        background-size: 90% auto;
+    }
+
+    .jl-home-presetetion h1{
+        margin-top: 5%;
+        text-align: center;
+    }
+    .jl-home-preseteton p{
+        text-align: center;
+    }
+
+    .jl-home-presetetion .jl-btn{
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .jl-scroll-down{
@@ -839,17 +854,86 @@ p, label{
         position: relative;
         top: 15px;
     }
+
+    /*  ULTILITARIA*/
+    .jl-title-xlarge{
+        font-size: 90px;
+    }
 }
 
-@media screen and (min-width: 576px)  {
+@media screen and (min-width: 550px)  {
+    .jl-home-presetetion{
+        background-size: 80%;
+        left: 20px;
+    }
+
+    .jl-home-presetetion h1{
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .jl-home-presetetion p{
+        text-align: left;
+    }
+
+    .jl-home-presetetion .jl-btn{
+        margin-left: 0;
+        margin-right: auto;
+    }
     
 }
 
+@media screen and (min-width: 700px){
+    .jl-home-presetetion{
+        background-size: 60%;
+        left: 20px;
+    }
+
+    .jl-home-presetetion h1{
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .jl-home-presetetion p{
+        text-align: left;
+    }
+
+
+    .jl-display-text{
+        margin-top: 10%;
+        right: 3%;
+    }
+}
+
 @media screen and (min-width: 768px){
+    .jl-home-presetetion{
+        background-size: 60%;
+        left: 20px;
+    }
+
+    .jl-home-presetetion h1{
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .jl-home-presetetion p{
+        text-align: left;
+    }
     
 }
 
 @media screen and (min-width: 992px){
+
+
+    .jl-home-presetetion{
+        background-size: 65%;
+    }
+
+
+    .jl-display-text{
+        margin-top: 10%;
+        right: 10%;
+    }
 
     .jl-menu-mob, .jl-btn-menu-mob{
         display: none;
@@ -897,6 +981,19 @@ p, label{
 
     .jl-menu a:hover:before{
         width: 100%;
+    }
+
+    .jl-title-xlarge{
+        font-size: 120px;
+    }
+
+    .jl-home-presetetion h1{
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .jl-home-presetetion{
+        text-align: left;
     }
 }
 
@@ -1003,10 +1100,6 @@ p, label{
 
 .jl-title-large{
     font-size: 64px;
-}
-
-.jl-title-xlarge{
-    font-size: 120px;
 }
 
 .jl-text-green{
